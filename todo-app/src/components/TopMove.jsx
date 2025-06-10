@@ -25,5 +25,5 @@ const TopMove = ({todos, setTodos, index}) => {
       <button onClick={moveTop}>맨 위로</button>
   )
 
-
+}
 export default TopMove
