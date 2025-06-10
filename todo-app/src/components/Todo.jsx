@@ -1,4 +1,5 @@
 import React, { useRef, useState } from 'react'
+import Update from './Update';
 
 const Todo = () => {
 
@@ -32,7 +33,8 @@ const Todo = () => {
 
       <div>
         {todos.map((item, index)=>(
-          <p key={index}>{index+1}.{item}</p>
+          <p key={index}>{index+1}.{item} <Update index ={index} todos = {todos} setTodos = {setTodos}/></p>
+          
         ))}
       </div>
     </div>
