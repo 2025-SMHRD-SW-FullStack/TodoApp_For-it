@@ -1,5 +1,9 @@
 import React, { useRef, useState } from 'react'
 import CheckBox from './CheckBox';
+import Delete from './Delete';
+import Update from './Update';
+import TopMove from './TopMove';
+import BottomMove from './BottomMove';
 
 const Todo = () => {
 
@@ -32,12 +36,16 @@ const Todo = () => {
       </div>
 
       <div>
-        {todos.map((item, index) => (
-          <div key={index}>
-            <span>{index + 1}.</span>
+        {todos.map((item, index)=>(       
+            <p key={index}>{index+1}.{item}
             <CheckBox item={item} todos={todos} setTodos={setTodos} index={index}/>
-          </div>
+            <TopMove todos={todos} setTodos={setTodos} index={index}/>
+            <BottomMove todos={todos} setTodos={setTodos} index={index}/>
+            <Update index ={index} todos = {todos} setTodos = {setTodos}/>
+            <Delete todos={todos} setTodos={setTodos} index={index}/>
+            </p>
         ))}
+        
       </div>
     </div>
   )

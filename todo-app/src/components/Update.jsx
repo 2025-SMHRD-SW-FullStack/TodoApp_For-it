@@ -1,8 +1,34 @@
-import React from 'react'
+import React, { useRef, useState } from 'react'
 
-const Update = () => {
+const Update = ({index,todos,setTodos}) => {
+
+  
+
+  // const inputVal = useRef("내용");
+  const [isEditing,setIsEditing] = useState(false);
+  const value = useRef();
+  // const [clickHandle,setClickHandle] = useState();
+  const handleUpdateClick =()=>{
+  
+    if(!isEditing){
+      setIsEditing(!isEditing)
+      let chTodo =[...todos];
+      chTodo[index] = <input type='text' placeholder={todos[index]} ref ={value}/>;
+      setTodos(chTodo);
+    }else{
+      setIsEditing(!isEditing)
+      let chTodo = [...todos];
+      chTodo[index]= value.current.value;
+      setTodos(chTodo);
+    }
+
+  }
+
+
+
+
   return (
-    <div>Update</div>
+    <button onClick={handleUpdateClick} >{isEditing?"수정완료":"내용 수정하기"}</button>
   )
 }
 
