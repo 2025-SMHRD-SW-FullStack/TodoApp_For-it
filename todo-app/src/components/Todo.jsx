@@ -1,5 +1,7 @@
 import React, { useRef, useState } from 'react'
 import Update from './Update';
+import TopMove from './TopMove';
+import BottomMove from './BottomMove';
 
 const Todo = () => {
 
@@ -32,9 +34,12 @@ const Todo = () => {
       </div>
 
       <div>
-        {todos.map((item, index)=>(
-          <p key={index}>{index+1}.{item} <Update index ={index} todos = {todos} setTodos = {setTodos}/></p>
-          
+        {todos.map((item, index)=>(       
+            <p key={index}>{index+1}.{item}
+            <TopMove todos={todos} setTodos={setTodos} index={index}/>
+            <BottomMove todos={todos} setTodos={setTodos} index={index}/>
+            <Update index ={index} todos = {todos} setTodos = {setTodos}/>
+            </p>
         ))}
       </div>
     </div>
