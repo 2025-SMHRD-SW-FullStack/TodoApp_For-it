@@ -1,4 +1,5 @@
 import React, { useRef, useState } from 'react'
+import Delete from './Delete';
 
 const Todo = () => {
 
@@ -32,8 +33,9 @@ const Todo = () => {
 
       <div>
         {todos.map((item, index)=>(
-          <p key={index}>{index+1}.{item}</p>
+          <div key={index}>{index+1}.{item}<Delete todos={todos} setTodos={setTodos} index={index}/></div>
         ))}
+        
       </div>
     </div>
   )
