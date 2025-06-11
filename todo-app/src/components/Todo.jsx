@@ -37,7 +37,7 @@ const Todo = () => {
 
       <div>
         {todos.map((item, index)=>(       
-            <p key={index}>{index+1}.{item}
+            <p key={index}>
             <CheckBox item={item} todos={todos} setTodos={setTodos} index={index}/>
             <TopMove todos={todos} setTodos={setTodos} index={index}/>
             <BottomMove todos={todos} setTodos={setTodos} index={index}/>
