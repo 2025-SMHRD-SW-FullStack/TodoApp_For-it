@@ -9,16 +9,16 @@ const Update = ({index,todos,setTodos}) => {
   const value = useRef();
   // const [clickHandle,setClickHandle] = useState();
   const handleUpdateClick =()=>{
-  
+  console.log(todos);
     if(!isEditing){
       setIsEditing(!isEditing)
       let chTodo =[...todos];
-      chTodo[index] = <input type='text' placeholder={todos[index]} ref ={value}/>;
+      chTodo[index].text = <input type='text' placeholder={todos[index].text} ref ={value}/>;
       setTodos(chTodo);
     }else{
       setIsEditing(!isEditing)
       let chTodo = [...todos];
-      chTodo[index]= value.current.value;
+      chTodo[index].text= value.current.value;
       setTodos(chTodo);
     }
 
